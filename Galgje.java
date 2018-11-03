@@ -26,15 +26,17 @@ public class Galgje {
 				break;
 			}
 			if(gok.equals("1")) {
-				printProgressie(counter);
+				getProgressie(counter);
 				continue Game;
 			}
+			getWoord();
+			//getPoppetje();
 			counter++;
 		}
 	System.out.println("\t#######################");
 	System.out.println("\t# Bedankt en tot Ooit!#");
 	System.out.println("\t#######################");
-	printProgressie(counter);
+	getProgressie(counter);
 	}
 	
 	public static void printMenu() {
@@ -43,8 +45,12 @@ public class Galgje {
 		System.out.println("\t<DRUK> 2. Om te stoppen.");
 		System.out.println("");
 	}
-	public static void printProgressie(int counter) {
+	public static void getProgressie(int counter) {
 		System.out.println("\tJe hebt in het spel "+counter+ " pogingen gedaan.");
 	}
+	public static void getWoord() {
+		System.out.println("");
+		System.out.println("Je hebt de volgende (??????? - letters) al geraden\n");
 		
+	}
 }
