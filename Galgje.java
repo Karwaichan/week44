@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Galgje {
+public class Hoofdprogramma {
 	public static void main(String [] args) {
 	Scanner input = new Scanner(System.in);
 	Random random = new Random();
@@ -11,25 +11,30 @@ public class Galgje {
 	String[] woorden = { "auto", "guitaar", "sneeuw","peper","fruit" };
 	char[] randomGuess = woorden[random.nextInt(woorden.length)].toCharArray();
 	
-	
-	
+
 	int raadTeller = 1;
 	int raadLimiet = 6;
 	boolean raadPogingen = false;
 	
 	
 	System.out.println("\t#####-Welkom bij galgje!-####");
-	printMenu();
+
 	
-	Game:
+	
 	while(!raden.equals(test) && !raadPogingen) {
 			
 			if(raadTeller<=raadLimiet) {
-			System.out.println("\tVul een 'voorlopig' woord  in"); //zoek uit hoe je per letter kan controleren.
+			System.out.println("\tVul een letter  in"); //zoek uit hoe je per letter kan controleren.
+			printArray(randomGuess);
 			String gok = input.next();
+			char invoer = input.nextLine().charAt(0);
 			raadTeller++;
 			}else {
 				raadPogingen = true;
+			}
+			
+			if(input.equals(randomGuess)) {
+				
 			}
 	
 
@@ -43,12 +48,11 @@ public class Galgje {
 	
 	}
 	
-	public static void printMenu() {
-		System.out.println("\t\t**SpelMenu**");
-		System.out.println("\t<DRUK> 1. Om progressie te zien.");
-		System.out.println("\t<DRUK> 2. Om te stoppen.");
-		System.out.println("");
-		
+	public static void printArray(char[] array) {
+		for(int x =0;x<array.length;x++) {
+			array[x] = '_';
+			System.out.print("\t"+array[x]+" ");
+		}
 	}
 
 }
