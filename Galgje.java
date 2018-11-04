@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Hoofdprogramma {
+public class Galgje {
 	public static void main(String [] args) {
 	Scanner input = new Scanner(System.in);
 	Random random = new Random();
@@ -22,19 +22,20 @@ public class Hoofdprogramma {
 	
 	
 	while(!raden.equals(test) && !raadPogingen) {
-			
+		System.out.println("\tVul een letter  in"); //zoek uit hoe je per letter kan controleren.
+		printArray(randomGuess);
+		String gok = input.next();
 			if(raadTeller<=raadLimiet) {
-			System.out.println("\tVul een letter  in"); //zoek uit hoe je per letter kan controleren.
-			printArray(randomGuess);
-			String gok = input.next();
-			char invoer = input.nextLine().charAt(0);
+			
+			//char invoer = input.nextLine().charAt(0);
 			raadTeller++;
 			}else {
 				raadPogingen = true;
 			}
 			
-			if(input.equals(randomGuess)) {
-				
+			if(gok.equals(test)) {
+				System.out.println("\tJe hebt gewonnen!");
+				break;
 			}
 	
 
